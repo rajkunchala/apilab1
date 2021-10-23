@@ -22,7 +22,7 @@ public class CocktailsControllerTests {
         String expectedValue = "Old Fashioned";
 
         this.mockMvcController.perform(
-                        MockMvcRequestBuilders.get("/cocktails"))
+                        MockMvcRequestBuilders.get("/cocktail"))
                 .andExpect(MockMvcResultMatchers.status().isOk())
                 .andExpect(MockMvcResultMatchers.jsonPath("$.name")
                         .value(expectedValue));
@@ -35,7 +35,7 @@ public class CocktailsControllerTests {
         String expectedValue = "Negroni";
 
         this.mockMvcController.perform(
-                        MockMvcRequestBuilders.get("/cocktails").param("name",
+                        MockMvcRequestBuilders.get("/cocktail").param("name",
                                 "Negroni"))
                 .andExpect(MockMvcResultMatchers.status().isOk())
                 .andExpect(MockMvcResultMatchers.jsonPath("$.name")
